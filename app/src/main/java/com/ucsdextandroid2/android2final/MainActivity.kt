@@ -8,5 +8,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        DataSources.getInstance().search("Burlington", object : DataSources.Callback<List<MetaWeatherItem>> {
+
+            override fun onDataFetched(data: List<MetaWeatherItem>) {
+
+            }
+
+        })
     }
 }
