@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Collections;
 import java.util.Objects;
 
-public class SearchActivity extends AppCompatActivity {
+public class earchActivity extends AppCompatActivity {
 
     private SearchAdapter searchAdapter;
     private String latestSearchTerm;

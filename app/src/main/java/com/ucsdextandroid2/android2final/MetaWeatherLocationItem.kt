@@ -10,7 +10,7 @@ import java.util.*
  * Created by rjaylward on 2019-05-18
  */
 @Parcelize
-class MetaWeatherItem(
+class MetaWeatherLocationItem(
 
     @SerializedName("title") val title: String?,
     @SerializedName("location_type") val locationType: String?,

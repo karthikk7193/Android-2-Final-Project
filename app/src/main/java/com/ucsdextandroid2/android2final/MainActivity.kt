@@ -9,9 +9,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DataSources.getInstance().search("Burlington", object : DataSources.Callback<List<MetaWeatherItem>> {
+        DataSources.getInstance().search("Burlington", object : DataSources.Callback<List<MetaWeatherLocationItem>> {
 
-            override fun onDataFetched(data: List<MetaWeatherItem>) {
+            override fun onDataFetched(data: List<MetaWeatherLocationItem>) {
 
             }
 

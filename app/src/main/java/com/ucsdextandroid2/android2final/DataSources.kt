@@ -22,15 +22,15 @@ class DataSources private constructor(){
         .build()
         .create(MetaDataAPI::class.java)
 
-    fun search(searchTerm: String, callback: Callback<List<MetaWeatherItem>>) {
+    fun search(searchTerm: String, callback: Callback<List<MetaWeatherLocationItem>>) {
 
-        metaDataAPI.searchWeather(searchTerm).enqueue(object: retrofit2.Callback<List<MetaWeatherItem>> {
-            override fun onResponse(call: Call<List<MetaWeatherItem>>, response: Response<List<MetaWeatherItem>>) {
+        metaDataAPI.searchWeather(searchTerm).enqueue(object: retrofit2.Callback<List<MetaWeatherLocationItem>> {
+            override fun onResponse(call: Call<List<MetaWeatherLocationItem>>, response: Response<List<MetaWeatherLocationItem>>) {
                 callback.onDataFetched(if(response.isSuccessful) response.body().orEmpty() else emptyList())
             }
 
-            override fun onFailure(call: Call<List<MetaWeatherItem>>, t: Throwable) {
-                callback.onDataFetched(emptyList<MetaWeatherItem>())
+            override fun onFailure(call: Call<List<MetaWeatherLocationItem>>, t: Throwable) {
+                callback.onDataFetched(emptyList<MetaWeatherLocationItem>())
             }
         })
 
@@ -42,7 +42,7 @@ class DataSources private constructor(){
 
     interface MetaDataAPI {
         @GET("/api/location/search/)")
-        fun searchWeather(@Query("query") term: String): Call<List<MetaWeatherItem>>
+        fun searchWeather(@Query("query") term: String): Call<List<MetaWeatherLocationItem>>
     }
 
     companion object {
