@@ -1,6 +1,5 @@
 package com.ucsdextandroid2.android2final
 
-import android.net.Uri
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity

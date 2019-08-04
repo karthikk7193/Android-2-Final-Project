@@ -1,10 +1,8 @@
 package com.ucsdextandroid2.android2final
 
-import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 /**
  * Created by rjaylward on 2019-05-18
@@ -28,4 +26,8 @@ class MetaWeatherLocationItem(
     @SerializedName("(the_temp") val theTemperature: Int,
     @SerializedName("humidity") val humidity: Float
 
-) : Parcelable
+) : Parcelable {
+    fun bind(item: MetaWeatherLocationItem) {
+
+    }
+}

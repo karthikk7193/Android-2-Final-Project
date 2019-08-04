@@ -19,7 +19,8 @@ abstract class AppDatabase : RoomDatabase() {
 
         private const val DB_NAME = "weatherapp.db"
 
-        @Volatile private var INSTANCE: AppDatabase? = null
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
 
         fun get(context: Context): AppDatabase = INSTANCE ?: synchronized(this) {
             INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
